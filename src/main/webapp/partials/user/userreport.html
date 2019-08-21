@@ -1,0 +1,136 @@
+<!--User Report Body-->
+<direct></direct>
+<div class="container-fluid dashbord-background">
+	<div class="container">
+		<div class="dashboard-main">
+			<div class="col-md-6 report repbox">
+			<div class="row repo">
+				
+
+				<form name="myForm" class="form-horizontal" id="form1" novalidate>
+					<div class="col-md-6 repcontent">
+	<h2 class="postissue"><center>Post Issue</center></h2>
+						<div class="form-group">
+					
+							<label class="control-label col-sm-4">Vehicle No:</label>
+							<div class="col-sm-8 editRinputs">
+								<input type="text" name="RegisterNo" class="form-control"
+									placeholder="Enter vehicle no"
+									ng-model="ReportData.vehicleNum"
+									ng-pattern="/^([A-Z|a-z]{2}\s{1}\d{2}\s{1}[A-Z|a-z]{1,2}\s{1}\d{1,4})?([A-Z|a-z]{3}\s{1}\d{1,4})?$/"
+									required autocomplete="off" style="text-transform:uppercase"> Ex..AP 05 BH 9018<span
+									ng-show="myForm.RegisterNo.$invalid && myForm.RegisterNo.$touched ||myForm.RegisterNo.$invalid && myForm.RegisterNo.$dirty"
+									style="color: red;"> <span
+									ng-show="myForm.RegisterNo.$error.required">Vehicle
+										Number is required </span>
+								</span> <span ng-show="myForm.RegisterNo.$error.pattern"
+									style="color: red;">Enter correct vehicle number.</span>
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label class="control-label col-sm-4">Vehicle type:</label>
+							<div class="col-sm-8 editRinputs">
+								<select class="form-control" ng-model="rd1"
+									ng-change="idfuntion(rd1.id)"
+									ng-options="vehicletpye.vehicleType for vehicletpye in details"
+									name="vehicletype" required>
+									<option value="" disabled="true">Select vehicle</option>
+								</select> <span
+									ng-show="myForm.vehicletype.$invalid && myForm.vehicletype.$touched"
+									style="color: red;">Vehicle type is required</span>
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="control-label col-sm-4">Offence Category:</label>
+							<div class="col-sm-8 editRinputs">
+								<select class="form-control"
+									ng-options="Offence.offenceCategory for Offence in res"
+									ng-model="rd2" name="offence" required>
+									<option value="" disabled="true">Select Category</option>
+								</select> <span
+									ng-show="myForm.offence.$invalid && myForm.offence.$touched"
+									style="color: red;">Offence Category is required</span>
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label class="control-label col-sm-4">Location:</label>
+							<div class="col-sm-8 editRinputs">
+								<input type="text" class="form-control"
+									ng-model="ReportData.location" googleplace
+									placeholder="Location" name="location" required> <span
+									ng-show="myForm.location.$invalid && myForm.location.$touched"
+									style="color: red;">Location is required</span>
+							</div>
+						</div>
+
+						<!-- <div class="form-group">
+							<label class="control-label col-sm-4">Issue Date:</label>
+							<div class="col-sm-8 editRinputs">
+								<input type="Date" class="form-control" name="idate"
+									placeholder="mm/dd/yyyy" id="issueDate"
+									ng-model="ReportData.issueDate" autocomplete="off" required>
+								<span ng-show="myForm.idate.$invalid && myForm.idate.$touched" style="color: red;">Date is required</span>
+							</div>
+						</div> --> 
+						<div class="form-group">
+							<label class="control-label col-sm-4">Issue Date:</label>
+							<div class="col-sm-8 editRinputs">
+								<input id="date" class="form-control"  id="idate" data-provide="datepicker" ng-model="ReportData.issueDate" placeholder="mm/dd/yyyy">
+								<span ng-show="myForm.idate.$invalid && myForm.idate.$touched" style="color: red;">Date is required</span> 
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label class="control-label col-sm-4">Issue Time:</label>
+							<div class="col-sm-8 editRinputs">
+								<input type="Time" class="form-control" name="itime"
+									placeholder="mm/dd/yyyy" id="itime"
+									ng-model="ReportData.issueTime" autocomplete="off" required>
+								<span ng-show="myForm.itime.$invalid && myForm.itime.$touched"
+									style="color: red;">Time is required</span>
+							</div>
+						</div>
+						
+						<div class="form-group">
+							<label class="control-label col-sm-4">Description:</label>
+							<div class="col-sm-8 editRinputs">
+								<textarea class="form-control"
+									ng-model="ReportData.description" placeholder="Description" id="description"
+									name="description" required> 
+									<span ng-show="myForm.description.$invalid && myForm.description.$touched" style="color: red;">Description is required</span>
+								</textarea>
+							</div>
+						</div>
+
+					</div>
+
+				</form>
+				</div>
+				<div class="col-md-4 repimg">
+					
+
+					<div>
+						<form name='myform'>
+							<div>
+							
+									
+									 <input type="file" ng-file-model="files" ngFileModel multiple />
+									 
+							</div>
+		
+						</form>
+					</div>
+				</div>
+			
+			
+			<div class="from-control">
+				<button type="button" class="btn btn-primary col-md-offset-5"
+					ng-click="postrprt(myform)" ng-disabled="myForm.$invalid">Submit</button>
+				<button class="btn btn-primary" ui-sref='userTiles'>Back</button>
+			</div>
+		</div>
+	</div>
+</div>
+</div>

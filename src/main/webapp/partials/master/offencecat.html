@@ -1,0 +1,23 @@
+<div class="wrapper">
+<directive></directive>
+<div class="container" id="content">
+<toggle></toggle>
+	<div class="col-md-8 col-md-offset-2 tlll7">
+		<div class="row">
+			<div class="col-md-6 boxx7 clrr7">
+				<div class="master-form">
+					<form class="form-group">
+						<h3 class="text-center">Offence Category</h3>
+						<select class="form-control htt7 het7" ng-model="x.selected" ng-change="idfuntion(x.selected.id)" ng-options="x.vehicleType for x in details track by x.id">
+							
+						</select>
+	
+						<input type="text" class="form-control het7" placeholder="Enter the New Offence Category" ng-model="offenseCategory">
+						<button class="btn btn-primary pull-right htt7" ng-click="offenceadd()">Save</button>
+					</form>
+				</div>
+
+			</div>
+		</div>
+		</div>
+		

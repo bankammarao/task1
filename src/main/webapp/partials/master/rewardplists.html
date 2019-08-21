@@ -1,0 +1,40 @@
+<div class="wrapper">
+<directive></directive>
+<div class="container cont" id="content">
+
+	<div class="tab-content">
+		<div id="menu1" class="tab-pane fade in active">
+			<button class="btn btn-primary pull-right" ui-sref='reward'>Add</button>
+			<h3>Reward Points</h3>
+
+			<table
+				class="table table-responsive-md table-hover approve_table notification-head"
+				border="0" style="margin-top: 50px;">
+				<thead class="Tcolor">
+					<tr>
+					<th>ID</th>
+						<th>OffenseCategory</th>
+						<th>Penalty</th>
+						<th>RewardPoints</th>
+						<th>Edit</th>
+						<th>Delete</th>
+					</tr>
+				</thead>
+
+				<tr ng-repeat="data in allrewards">
+					<div>
+						<td>{{data.id}}</td>
+						<td>{{data.offenseCategory}}</td>
+						<td>{{data.penalty}}</td>
+						<td>{{data.rewardPoints}}</td>
+						<td><a ui-sref='rewardEdit({rewardE:data.id})'><i
+								class="glyphicon glyphicon-edit"></i></a></td>
+						<td><a ng-click=rewarddel(data.id)><i
+								class="glyphicon glyphicon-remove"></i></a></td>
+					</div>
+				</tr>
+			</table>
+		</div>
+	</div>
+</div>
+</div>

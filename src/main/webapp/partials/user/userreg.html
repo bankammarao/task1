@@ -1,0 +1,457 @@
+<div class="container">
+	<div class="col-md-8 col-md-offset-2 tll">
+		<div class="row">
+			<div class="col-md-6 boxx1 clrr1">
+				<div class="padd1">
+					<h2>New to Traffic?</h2>
+					<p><i class="fa fa-hand-o-right" aria-hidden="true"></i>  One Click to Register yourself in Traffic App.</p>
+					<p><i class="fa fa-hand-o-right" aria-hidden="true"></i>  Post the Issues.</p>
+					<p><i class="fa fa-hand-o-right" aria-hidden="true"></i>  Get Reward Points.</p>
+					<p><i class="fa fa-hand-o-right" aria-hidden="true"></i>  Know status on posted Issues.</p>
+				
+				</div>
+				<div class="padd1">
+					<h2>Take Tour</h2>
+					<p><i class="fa fa-hand-o-right" aria-hidden="true"></i> One click to know how many Reward points you earned.</p>
+					<p><i class="fa fa-hand-o-right" aria-hidden="true"></i> One click to know how many Issues you posted.</p>
+					<p><i class="fa fa-hand-o-right" aria-hidden="true"></i>Post the Issue in one click.</p>
+				</div>
+			</div>
+
+			<div class="col-md-6 boxx2 clrr2">
+
+				<form name="frm" class="frmbgclr" novalidate>
+					<div class="animate-switch-container" ng-switch on="stage" 	ng-class="{forward: direction, backward:!direction}">
+						<div class="animate-switch" ng-switch-default>
+							<div>
+								<h3>
+									<center>Registration Details</center>
+								</h3>
+								<ul class="bootstrapWizard form-wizard">
+
+									<li class="active" data-target="#step1"><span class="step"><span class="fa fa-user"></span></span></li>
+									<li data-target="#step2" class=""><span class="step"><span class="fa fa-address-card"></span></span></li>
+									<li data-target="#step3" class=""><span class="step"><span class="fa fa-info-circle"></span></span></li>
+									<li data-target="#step4" class=""><span class="step"><span class="fa fa-university"></span></span></li>
+								</ul>
+							</div>
+							<br> <input type="hidden" name="description" ng-model="resource.registrationId" /><br> <br>
+							<div class="form-group">
+								<div class="row">
+									
+									<div class="col-xs-4 field">
+								
+										  <span class='blocking-span'>
+										    <input type="text" class="form-control inputText abc" ng-pattern="/^[a-zA-Z]*$/" name="firstname" ng-model="userR.firstName" autocomplete="off"  required/>
+										    <span class="floating-label left">First Name</span>
+										  </span>
+										<div class="index_error">
+											<span ng-show="frm.firstname.$invalid && frm.firstname.$touched ||frm.firstname.$invalid && frm.firstname.$dirty"
+											> <span ng-show="frm.firstname.$error.required">FirstName required </span>
+										</span> <span ng-show="frm.firstname.$error.pattern">Alphabets Only.</span>
+										</div> 
+									</div>
+
+									<div class="col-xs-4 col-xs-offset-2 field">
+										<span class='blocking-span'>
+										    <input type="text" class="form-control inputText abc" ng-pattern="/^[a-zA-Z]*$/" name="lastname" ng-model="userR.lastName" autocomplete="off" required/>
+										    <span class="floating-label left">Last Name</span>
+										  </span>
+										<div class="index_error">
+										 <span ng-show="frm.lastname.$invalid && frm.lastname.$touched ||frm.lastname.$invalid && frm.lastname.$dirty"
+											class="index_error"> <span ng-show="frm.lastname.$error.required" class="index_error">LastName required </span>
+										</span> <span ng-show="frm.lastname.$error.pattern" class="index_error">Alphabets Only.</span>
+										</div> 
+									</div>
+								
+								</div>
+							</div>
+							
+							<div class="form-group field">
+									<span class='blocking-span'>
+										    <input type="text" class="form-control inputText" ng-pattern="/^[7-9][0-9]{9}$/" name="mobilenumber" ng-model="userR.mobileNum" autocomplete="off"  maxlength="10" required/>
+										    <span class="floating-label left">Mobile Number</span>
+										  </span>
+										<div class="index_error">
+											<span ng-show="frm.mobilenumber.$invalid && frm.mobilenumber.$touched ||frm.mobilenumber.$invalid && frm.mobilenumber.$dirty"
+											> <span ng-show="frm.mobilenumber.$error.required">Mobile Number required </span>
+										</span> <span ng-show="frm.mobilenumber.$error.pattern">Enter valid Mobile number</span>
+										</div> 
+							</div>
+							
+
+													
+ 				<div class="form-group ">
+								<div class="row">
+									
+									<div class="col-xs-4 field">
+								
+										 <span class='blocking-span'>
+										 <label>Date of Birth</label>
+										    <input type="date" class="form-control inputText abc"   ng-model="userR.dob" name="dob"  required/>
+										    <!-- ng-pattern="/^(0[1-9]|[12][0-9]|3[01])[\/|-](0[1-9]|1[012])[\/|-](19|20)\d\d$/" -->
+										  <!--   <span class="floating-label left">D.O.B</span> -->
+										  </span>
+										<div class="index_error">
+											<span ng-show="frm.dob.$invalid && frm.dob.$touched ||frm.dob.$invalid && frm.dob.$dirty">
+											<span ng-show="frm.dob.$error.required">D.O.B required </span>
+											</span> <span ng-show="frm.dob.$error.pattern" class="index_error">Enter valid D.O.B</span>
+									</div>
+									</div>
+
+									<div class="col-xs-5 col-xs-offset-2 field">
+										<label>Gender:</label><br/>
+										 <input type="radio" name="gender" ng-model="userR.gender" value="female" ng-required="!userR.gender"/>Female <input type="radio" name="gender" ng-model="userR.gender" value="male" ng-required="!userR.gender"/>Male
+										<span class="index_error" ng-if="frm.$submitted && frm.gender.$error.required"> Click your gender<br></span>
+									</div>
+								</div>
+								</div>
+								
+
+							<div class="form-group field">
+								<div class="row">
+									<span class='blocking-span'>
+										 <input type="text" class="form-control inputText" ng-model="userR.name" name="e_mail" ng-pattern="/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/" autocomplete="off" required style="margin-left: 15px;"/>
+										 <span class="floating-label">Email</span>
+									</span>	
+									<div class="index_error">
+									<span ng-show="frm.e_mail.$invalid && frm.e_mail.$touched ||frm.e_mail.$invalid && frm.e_mail.$dirty">
+									<span ng-show="frm.e_mail.$error.required">Email required </span>
+									</span> <span ng-show="frm.e_mail.$error.pattern" class="index_error">Enter valid Email Id</span>
+									</div>
+									</div>
+							</div>
+ 
+ 
+ 
+							<div class="form-group field">
+								<div class="row">
+								<div class="col-xs-4 field">
+									<span class='blocking-span'>
+										 <input type="password" class="form-control inputText abc" ng-model="userR.password" name="Password" ng-pattern="/^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/" required/>
+										 <span class="floating-label"> Password</span>
+									</span>	
+									<div class="index_error">
+									<span ng-show="frm.Password.$invalid && frm.Password.$touched ||frm.Password.$invalid && frm.Password.$dirty"
+									class="index_error"> <span
+									ng-show="frm.Password.$error.required"> Password required </span>
+								</span> <span ng-show="frm.Password.$error.pattern" class="index_error">Password length must be 8 chars including letter, one special and one
+									number </span>
+									</div>
+									</div>
+
+									<div class="col-xs-4 col-xs-offset-2 field">
+										<span class='blocking-span'>
+										 <input type="password" class="form-control inputText abc" name="cpassword" required/>
+										 <span class="floating-label">Confirm Password</span>
+									</span>	
+									<div class="index_error">
+									<span ng-show="Password!=cpassword">Passwords have to match!</span>
+									</div>
+							</div>
+							</div>
+							</div>
+						
+							<div class="form-group">
+								<div class="row">
+									<div class="col-xs-6">
+										<input type="button" class="form-control btn btn-default" value="Back" ng-disabled="frm.$invalid" >
+									</div>
+									<div class="col-xs-6">
+										<input type="button" class="form-control btn btn-default" value="Next" ng-click="next('stage1')" ng-disabled="frm.$invalid" >
+									</div>
+								</div>
+							</div>
+
+							
+						</div>
+
+						<div class="animate-switch" ng-switch-when="stage1">
+							<div>
+								<h3>
+									<center>Address Details</center>
+								</h3>
+								<br>
+								<ul class="bootstrapWizard form-wizard b">
+
+									<li class="" data-target="#step1"><span class="step"><span class="fa fa-user"></span></span></li>
+									<li data-target="#step2" class="active"><span class="step"><span class="fa fa-address-card"></span></span></li>
+									<li data-target="#step3" class=""><span class="step"><span class="fa fa-info-circle"></span></span></li>
+									<li data-target="#step4" class=""><span class="step"><span class="fa fa-university"></span></span></li>
+								</ul>
+							</div>
+
+							<div class="form-group">
+								<div class="row">
+									<div class="col-xs-4 field">
+									<span class='blocking-span'>
+										 <input type="text" class="form-control inputText abc" ng-model="userR.doorNo" name="hno" required/>
+										 <span class="floating-label">House Number</span>
+									</span>	
+										<div class="index_error">
+											 <span ng-show="frm.hno.$invalid && frm.hno.$touched ||frm.hno.$invalid && frm.hno.$dirty"
+											class="index_error"> <span
+											ng-show="frm.hno.$error.required">House NO required </span>
+										</span> <span ng-show="frm.hno.$error.pattern" class="index_error">Enter valid Housenumber</span>
+											</div>
+									</div>
+
+									<div class="col-xs-4 col-xs-offset-2 field">
+									<span class='blocking-span'>
+										 <input type="text" class="form-control inputText abc" ng-model="userR.street" name="street" required/>
+										 <span class="floating-label">Street/Colony</span>
+									</span>	
+									<div class="index_error">
+										<span ng-show="frm.street.$invalid && frm.street.$touched ||frm.street.$invalid && frm.street.$dirty" class="index_error"> 
+											<span ng-show="frm.street.$error.required">Street is required </span>
+										</span>
+										</div>
+									</div>
+
+								</div>
+							</div>
+
+							<div class="form-group field">
+								<span class='blocking-span'>
+										 <input type="text" class="form-control inputText" ng-model="userR.city" name="city" required/>
+										 <span class="floating-label">Village/City</span>
+									</span>	
+									<div class="index_error">
+									 <span ng-show="frm.city.$invalid && frm.city.$touched ||frm.city.$invalid && frm.city.$dirty"
+									class="index_error"> <span
+									ng-show="frm.city.$error.required">city is required </span>
+								</span>
+								</div>
+							</div>
+
+							<div class="form-group field">
+							<span class='blocking-span'>
+										 <input type="text" class="form-control inputText" ng-model="userR.district" name="District" required/>
+										 <span class="floating-label">District</span>
+									</span>	
+								<div class="index_error">
+									<span ng-show="frm.District.$invalid && frm.District.$touched ||frm.District.$invalid && frm.District.$dirty"
+									class="index_error"> <span
+									ng-show="frm.District.$error.required">District is 	required </span>
+								</span>
+								</div>
+							</div>
+
+
+							<div class="form-group field">
+							<span class='blocking-span'>
+										 <input type="text" class="form-control inputText" ng-model="userR.state" name="state" required/>
+										 <span class="floating-label">State</span>
+									</span>	
+								<div class="index_error">
+									<span ng-show="frm.state.$invalid && frm.state.$touched ||frm.state.$invalid && frm.state.$dirty"
+									class="index_error"> <span ng-show="frm.state.$error.required">state is required </span>
+								</span>
+								</div>
+							</div>
+							
+							<div class="form-group field">
+							<span class='blocking-span'>
+							<input type="text" class="form-control inputText" ng-model="userR.zipCode"  ng-pattern="/^[1-9][0-9]{5}$/" name="pincode" required/>
+							<span class="floating-label">Pin Code</span>
+							</span>	
+							<div class="index_error">
+							<span ng-show="frm.pincode.$invalid && frm.pincode.$touched ||frm.pincode.$invalid && frm.pincode.$dirty">
+							<span ng-show="frm.pincode.$error.required">Pin code required </span>
+							</span> <span ng-show="frm.pincode.$error.pattern" class="index_error">Enter valid pincode</span>
+							</div>
+							</div>
+							<div class="form-group">
+								<div class="row">
+									<div class="col-xs-6">
+										<input type="button" class="form-control btn btn-default" value="Back" ng-click="back('stage')">
+									</div>
+									<div class="col-xs-6">
+										<input type="button" class="form-control btn btn-default" value="Next" ng-click="next('stage2')"
+											ng-disabled="frm.$invalid">
+									</div>
+								</div>
+							</div>
+						</div>
+
+
+						<div class="animate-switch" ng-switch-when="stage2">
+							<div>
+								<h3>
+									<center>Aadhar Details</center>
+								</h3>
+							<ul class="bootstrapWizard form-wizard b">
+
+									<li class="" data-target="#step1"><span class="step"><span class="fa fa-user"></span></span></li>
+									<li data-target="#step2" class=""><span class="step"><span class="fa fa-address-card"></span></span></li>
+									<li data-target="#step3" class="active"><span class="step"><span class="fa fa-info-circle"></span></span></li>
+									<li data-target="#step4" class=""><span class="step"><span class="fa fa-university"></span></span></li>
+								</ul>
+								</div>
+								<br>
+
+							<div class="form-group field">
+								<span class='blocking-span'>
+								<input type="text" class="form-control inputText" ng-model="userR.aadharNo" name="Aadhar" ng-pattern="/^[0-9]{12}$/"  required/>
+								<span class="floating-label">Aadhar Number</span>
+								</span>	
+								
+								<div class="index_error">
+								<span ng-show="frm.Aadhar.$invalid && frm.Aadhar.$touched ||frm.Aadhar.$invalid && frm.Aadhar.$dirty">
+								<span ng-show="frm.Aadhar.$error.required">Aadhar required </span>
+								</span> <span ng-show="frm.Aadhar.$error.pattern" class="index_error">Enter valid Aadhar</span>
+								</div>
+							</div>
+							
+							<div ng-controller="userPCtrl">
+								<div class="form-group">
+								<div class="row">
+								<div class="col-md-6">
+								<input type="file" id="uploadedimage" class="browse" file ng-model="u.file" name="file-upload-field"  ng-model-instant onchange="angular.element(this).scope().imageUploadFunc(event)" multiple="true" required/>
+								</div>
+								<div class="col-md-6" >
+								<img src="" id="controller" height="100px" width="200px" alt="image"class="img-thumbnail">
+								</div>
+								</div>
+								</div>
+							</div>
+							
+							Click here if you have vehicle:<input type="checkbox" ng-model="all"><br>
+
+							<div class="form-group">
+								<select  ng-disabled="!all" class="form-control" name="vtype" ng-model="userR.vehicleType" placeholder="Vehicle type">
+									<option>Two wheeler</option>
+									<option>Three wheeler</option>
+									<option>Four wheeler</option>
+									<option> Heavy vechile</option>
+								</select>
+
+							</div>
+							<div class="form-group field">
+								<span class='blocking-span'>
+										 <input type="text" ng-disabled="!all" class="form-control inputText" ng-model="userR.vehicleNo" name="vno"/>
+										 <span class="floating-label">Vehicle Number</span>
+									</span>	
+							</div>
+							<div class="form-group">
+								<div class="row">
+									<div class="col-xs-6">
+										<input type="button" class="form-control btn btn-default" value="Back" ng-click="back('stage1') ">
+									</div>
+									<div class="col-xs-6">
+										<input type="button" class="form-control btn btn-default" value="Next" ng-click="next('stage3')"
+											ng-disabled="frm.$invalid">
+									</div>
+								</div>
+							</div>
+						</div>
+
+
+						<div class="animate-switch" ng-switch-when="stage3">
+							<div>
+								<h3>
+									<center>Bank Details</center>
+								</h3>
+								<ul class="bootstrapWizard form-wizard b">
+
+									<li class="" data-target="#step1"><span class="step"><span class="fa fa-user"></span></span></li>
+									<li data-target="#step2" class=""><span class="step"><span class="fa fa-address-card"></span></span></li>
+									<li data-target="#step3" class=""><span class="step"><span class="fa fa-info-circle"></span></span></li>
+									<li data-target="#step4" class="active"><span class="step"><span class="fa fa-university"></span></span></li>
+								</ul>
+								</div>
+							Click here if you have Bank Details:<input type="checkbox" ng-model="all1"><br>
+							<div class="form-group field">
+								<select class="form-control" ng-disabled="!all1" name="Account" ng-model="userR.accountType" placeholder="Account" required="required">
+									<option disabled>Please choose account type</option>
+									<option>Savings Account</option>
+									<option>Current Account</option>
+									<option>Checking Account</option>
+								</select> 
+								<div class="index_error">
+								<span class="error-text" ng-show="frm.Account.$invalid && myForm.Account.$touched || myForm.Account.$invalid && myForm.Account.$dirty">
+									<span class="error-text" ng-show="frm.Account.$error.required">* Account Details Is Mandatory.</span> <span class="error-text"
+									ng-show="frm.Account.$error.pattern">Hey! Provide Account Details </span>
+								</span>
+								
+								</div>
+							</div>
+							<div class="form-group field">
+									<span class='blocking-span'>
+										 <input type="text" ng-disabled="!all1" class="form-control inputText" ng-model="userR.accountNo" name="Accname" required/>
+										 <span class="floating-label">Account Number</span>
+									</span>								
+								<div class="index_error">
+									 <span ng-show="frm.Accname.$invalid && frm.Accname.$touched ||frm.Accname.$invalid && frm.Accname.$dirty"
+									class="index_error"> <span ng-show="frm.Accname.$error.required">AccountNo  is required </span>
+								</span>
+								</div>
+							</div>
+							<div class="form-group field">
+							<span class='blocking-span'>
+										 <input type="text" ng-disabled="!all1" class="form-control inputText" ng-model="userR.branchName" name="bname" required/>
+										 <span class="floating-label">Branch Name</span>
+									</span>	
+								<div class="index_error">
+									 <span ng-show="frm.bname.$invalid && frm.bname.$touched ||frm.bname.$invalid && frm.bname.$dirty"
+									class="index_error"> <span
+									ng-show="frm.bname.$error.required">BranchName is required </span>
+								</span>
+								</div>
+							</div>
+							<div class="form-group field">
+								<span class='blocking-span'>
+										 <input type="text" ng-disabled="!all1" class="form-control inputText" ng-model="userR.ifscCode" name="ifsc" required/>
+										 <span class="floating-label">IFSC Code</span>
+									</span>	
+							
+									<div class="index_error">
+									<span ng-show="frm.ifsc.$invalid && frm.ifsc.$touched ||frm.ifsc.$invalid && frm.ifsc.$dirty"
+									class="index_error"> <span
+									ng-show="frm.ifsc.$error.required">Ifsc is required </span>
+								</span>
+								</span>
+								</div>
+							</div>
+							<div class="form-group field">
+							<span class='blocking-span'>
+									<input type="text" ng-disabled="!all1" class="form-control inputText" ng-model="userR.bankName" name="bankname" required/>
+									<span class="floating-label">Bank Name</span>
+							</span>	
+								<div class="index_error">
+									<span
+									ng-show="frm.bankname.$invalid && frm.bankname.$touched ||frm.bankname.$invalid && frm.bankname.$dirty"
+									class="index_error"> <span
+									ng-show="frm.bankname.$error.required">BankName is required </span>
+								</span>
+								</span>
+								</div>
+							</div>
+							<input type="checkbox" ng-model="all2" required> I agree the <a>Terms and Conditions</a>
+
+
+							<div class="form-group">
+								<div class="row">
+									<div class="col-xs-6">
+										<input type="button" class="form-control btn btn-default"
+											value="Back" ng-click="back('stage2')" >
+									</div>
+									<div class="col-xs-6">
+										<input type="button" class="form-control btn btn-default"
+											value="Register" ng-click="registerForm()" ng-disabled="!all2">
+									</div>
+								</div>
+							</div>
+
+
+						</div>
+
+					</div>
+			</div>
+			</form>
+
+
+		</div>
+
+	</div>
+</div>

@@ -1,0 +1,74 @@
+<admindirective></admindirective><br><br>
+     
+      	<div class="container m-t-50">
+			  <div class="row">
+			      <div class="col-md-offset-3 col-md-6">
+			       <div class="panel-group">
+				    <div class="panel panel-success">
+				      <div class="panel-heading">Create User</div>
+				         <div class="panel-body">
+			          <form name="frm" class="frmbgclr" ng-submit="createuser(postrequirement)">       
+			               
+			            
+			                <div class="form-group">
+			                  <label class="control-label">User Name:</label>
+			                  <input type="text" class="form-control" name="testName" ng-model="postrequirement.name" placeholder=" userName" required> 
+			                    <span class="help-block" ng-show="frm.name.$dirty && frm.name.$error.required">Required.!</span>
+			                    <span class="help-block" ng-show="frm.name.$error.pattern && frm.name.$invalid ">please enter userName</span>  
+			                </div>  
+			                  <div class="form-group">
+			                  <label class="control-label">First Name:</label>
+			                  <input type="text" class="form-control" name="firstName" ng-model="postrequirement.firstName" placeholder="firstName" required> 
+			                    <span class="help-block" ng-show="frm.firstName.$dirty && frm.firstName.$error.required">Required.!</span>
+			                    <span class="help-block" ng-show="frm.firstName.$error.pattern && frm.firstName.$invalid ">please enter firstName</span>  
+			                </div> 
+			                  <div class="form-group">
+			                  <label class="control-label">Last Name:</label>
+			                  <input type="text" class="form-control" name="lastName" ng-model="postrequirement.lastName" placeholder="lastName" required> 
+			                    <span class="help-block" ng-show="frm.lastName.$dirty && frm.lastName.$error.required">Required.!</span>
+			                    <span class="help-block" ng-show="frm.lastName.$error.pattern && frm.lastName.$invalid ">please enter lastName</span>  
+			                </div> 
+			                  <div class="form-group">
+			                  <label class="control-label">Mobile Number:</label>
+			                  <input type="number" class="form-control" name="mobileNum" ng-model="postrequirement.mobileNum" placeholder="Enter Your mobileNum" required> 
+			                    <span class="help-block" ng-show="frm.mobileNum.$dirty && frm.mobileNum.$error.required">Required.!</span>
+			                    <span class="help-block" ng-show="frm.mobileNum.$error.pattern && frm.mobileNum.$invalid ">please enter mobileNumber</span>  
+			                </div> 
+			                    <div class="form-group">
+			                  <label class="control-label">password:</label>
+			                  <input type="password" class="form-control" name="password" ng-model="postrequirement.password" placeholder="Enter Your password" required> 
+			                    <span class="help-block" ng-show="frm.password.$dirty && frm.password.$error.required">Required.!</span>
+			                    <span class="help-block" ng-show="frm.password.$error.pattern && frm.password.$invalid ">please enter password</span>  
+			                </div> 
+			                    <div class="form-group">
+			                  <label class="control-label">date of birth:</label>
+			                  <input type="date" class="form-control" name="dob" ng-model="postrequirement.dob" placeholder="Enter Your dob" required> 
+			                    <span class="help-block" ng-show="frm.dob.$dirty && frm.dob.$error.required">Required.!</span>
+			                    <span class="help-block" ng-show="frm.dob.$error.pattern && frm.dob.$invalid ">please enter dob</span>  
+			                </div> 
+			                <!--     <div class="form-group">
+			                  <label class="control-label">gender:</label>
+			                  <input type="radio" class="form-control" name="gender" ng-model="postrequirement.gender" placeholder="Enter Your gender" required> 
+			                    <span class="help-block" ng-show="frm.gender.$dirty && frm.gender.$error.required">Required.!</span>
+			                    <span class="help-block" ng-show="frm.gender.$error.pattern && frm.gender.$invalid ">please enter gender</span>  
+			                </div>   -->
+			                    <div class="form-group">
+			                  <label class="control-label">status:</label>
+			                  <input type="text" class="form-control" name="status" ng-model="postrequirement.status" placeholder="Enter Your status" required> 
+			                    <span class="help-block" ng-show="frm.status.$dirty && frm.status.$error.required">Required.!</span>
+			                    <span class="help-block" ng-show="frm.status.$error.pattern && frm.status.$invalid ">please enter status</span>  
+			                </div>  
+			                           
+			                    <div class="form-group">
+			                      <button type="submit" class="btn btn-primary pull-right" ng-disabled="frm.$invalid">Submit</button>
+			                    </div>     
+			  	 </form>
+			   </div>
+			 </div>
+			</div>
+      	</div>
+    </div>
+
+<!-- <center><h3>Create Sponsor</h3></center> -->
+
+

@@ -1,0 +1,109 @@
+<direct></direct>
+<div class="row bg-white">
+     <div class="col-md-offset-3 col-md-6 reporttable">
+     	<div class="pull-right">
+ <button class="btn btn-default btn-xs" style="min-height:0px" ui-sref='Dashboard'>X</button>
+ </div>
+         <h3 class="text-center pdng">Issue Details</h3>
+    <div class="col-md-offset-3 col-md-9">
+    <table class="table">
+			<tr>
+			<th>Report Id:</th>
+			<td>{{Udata.id}}</td>
+			</tr>
+			<tr>
+			<th>Posted Date:</th>
+			<td>{{Udata.postedDate}}</td>
+			</tr>
+			<tr>
+			<th>Issue Date:</th>
+			<td>{{Udata.issueDate}}</td>
+			</tr>
+			<tr>
+			<th>Issue Time:</th>
+			<td>{{Udata.issueTime}}</td>
+			</tr>
+			<tr>
+			<th>Posted Time:</th>
+			<td>{{Udata.postedTime}}</td>
+			</tr>
+			<tr>
+			<th>Vechile Number:</th>
+			<td>{{Udata.vehicleNum}}</td>
+			</tr>
+			<tr>
+			<th>Vechile Type:</th>
+			<td>{{Udata.vehicleType}}</td>
+			</tr>
+			<tr>
+			<th>Offence Category:</th>
+			<td>{{Udata.offenceCategory}}</td>
+			</tr>
+			<th>Description:</th>
+			<td>{{Udata.description}}</td>
+			</tr>
+			<tr>
+			<th>Location:</th>
+			<td>{{Udata.location}}</td>
+			</tr>
+			<tr>
+			<tr>
+			<th>Status:</th>
+			<td>{{Udata.status}}</td>
+			</tr>
+			<tr>
+			<th>Comments:</th>
+			<td>{{Udata.comment}}</td>
+			</tr>
+			<tr>
+			<th>Attachment:</th>
+			<td>{{Udata.r}} 
+			<a data-toggle="modal" data-target="#myModal" ng-click="View(Udata.id)">View</a></td>
+			<div class="modal fade" id="myModal" role="dialog">
+											<div class="modal-dialog modal-lg">
+												<div class="modal-content">
+													<div class="modal-header">
+														<button type="button" class="close" data-dismiss="modal">&times;</button>
+														<h4 class="modal-title">Images</h4>
+													</div>
+													<div class="modal-body">
+														<div class="col-md-3">
+															<img ng-src="data:image/jpeg;base64,{{user.file1_data}}"
+																style="width: 280px; height: 280px;"
+																class="img-responsive imgView" />
+														</div>
+														<div class="col-md-3">
+															<img ng-src="data:image/jpeg;base64,{{user.file2_data}}"
+																style="width: 280px; height: 280px;"
+																class="img-responsive imgView" />
+														</div>
+														<div class="col-md-3">
+															<img ng-src="data:image/jpeg;base64,{{user.file3_data}}"
+																style="width: 280px; height: 280px;"
+																class="img-responsive imgView" />
+														</div>
+														<div class="col-md-3">
+															<img ng-src="data:image/jpeg;base64,{{user.file4_data}}"
+																style="width: 280px; height: 280px;"
+																class="img-responsive imgView" />
+														</div>
+													</div>
+													<div class="modal-footer">
+														<button type="button" class="btn btn-default"
+															data-dismiss="modal">Close</button>
+													</div>
+												</div>
+											</div>
+										</div>
+
+										</div>
+
+			</tr>
+			
+			
+</table>
+    </div>
+    <button class="btn btn-primary" ui-sref="Dashboard">Back</button>
+   </div>
+</div>
+

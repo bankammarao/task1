@@ -1,0 +1,36 @@
+<div class="wrapper">
+<directive></directive>
+<div class="container" id="content">
+
+		<ul class="col-md-12 photos">
+		<div class="col-md-6">
+		<li><img ng-src="data:image/jpeg;base64,{{r.file1_data}}" style="width: 280px; height: 280px;"
+			class="img-responsive" ng-model="admin" />
+		</li>
+		<li> {{r.file1}}</li>
+		</div>
+		<div class="col-md-6">
+		<li><img ng-src="data:image/jpeg;base64,{{r.file2_data}}" style="width: 280px; height: 280px;"
+			class="img-responsive" ng-model="admin" />
+		</li>
+		<li> {{r.file2}}</li>
+		</div>
+		<div class="col-md-6">
+		<li><img ng-src="data:image/jpeg;base64,{{r.file3_data}}" style="width: 280px; height: 280px;"
+			class="img-responsive" ng-model="admin" />
+		</li>
+		<li> {{r.file3}}</li>
+		</div>
+		<div class="col-md-6">
+		<li><img ng-src="data:image/jpeg;base64,{{r.file4_data}}" style="width: 280px; height: 280px;"
+			class="img-responsive" ng-model="admin" />
+		</li>
+		<li> {{r.file4}}</li>
+		</div>
+		 
+	</ul>
+
+	<button class="btn btn-info" ui-sref="reportdetails({report_id:r.userReport.id})">Back</button>
+
+</div>
+</div>

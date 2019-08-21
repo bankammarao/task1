@@ -1,0 +1,68 @@
+<div class="container">
+	<div class = "pull-right">
+	<!-- <button type="button" class="btn btn-default"  data-toggle="modal" data-target="#myModal">Register</button> -->
+	<button ui-sref="RegNew" class="btn btn-primary pull-right margn">AddUser</span></button>
+	</div>
+	
+  <div class="tab-content">
+  
+    <div id="menu1" class="tab-pane fade in active">
+		<table class="table table-responsive-md table-hover approve_table notification-head" border="0">
+			<thead class="Tcolor">
+				<tr>
+					<th>First Name</th>
+					<th>Last Name</th>
+					<th>Mobile Number</th>
+					<th>UserName</th>
+					<!-- <th>Password</th> -->
+					<!-- <th>View More</th> -->
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="user in userdata">
+			    <div>
+					<td>{{user.firstName}}</td>
+					<td>{{user.lastName}}</td>
+					<td>{{user.mobileNum}} </td>
+					<td>{{user.name}}</td>
+					<!-- <td>{{user.password}} </td> -->
+					<!-- <td><a href="#">{{x.viewMore}}</a></td> -->
+				</div>
+				</tr>
+			</tbody>
+		</table>
+    </div>
+    
+    
+    <tfoot>
+					<tr>
+						<td align="center" colspan="6   ">
+							<!--   <span class="form-group pull-left page-size form-inline">  
+                                        <select id="ddlPageSize" class="form-control control-color"  
+                                                ng-model="pageSizeSelected"  
+                                                ng-change="changePageSize()">  
+                                            <option value="5">5</option>  
+                                            <option value="10">10</option>  
+                                            <option value="25">25</option>  
+                                            <option value="50">50</option>  
+                                        </select>  
+                                    </span>  -->
+							<div class="pull-right">
+								<pagination total-items="totalCount" ng-change="pageChanged()"
+									items-per-page="pageCount" direction-links="true"
+									ng-model="pageNumber" max-size="maxSize" class="pagination"
+									boundary-links="true" rotate="false" num-pages="numPages"></pagination>
+								<!--  <a class="btn btn-primary">Page: {{pageIndex}} / {{numPages}}</a>   -->
+							</div>
+						</td>
+					</tr>
+				</tfoot>
+    <!-- button for register -->
+
+	   <!--  <div class = "pull-right">
+		<button type="button" class="btn btn-default"  data-toggle="modal" data-target="#myModal">Register</button>
+		<button ui-sref="RegNew" class="btn btn-primary pull-right">AddUser</span></button>
+		</div> -->
+
+</div>
+</div>	

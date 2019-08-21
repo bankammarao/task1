@@ -1,0 +1,49 @@
+<admindirective></admindirective><br><br>
+     
+      	<div class="container m-t-50">
+			  <div class="row">
+			      <div class="col-md-offset-3 col-md-6">
+			       <div class="panel-group">
+				    <div class="panel panel-success">
+				      <div class="panel-heading">Create Sponsor</div>
+				         <div class="panel-body">
+			          <form name="frm" class="frmbgclr" ng-submit="createsponsor(postrequirement)">       
+			               
+			            
+			                <div class="form-group">
+			                  <label class="control-label">Sponsor Name:</label>
+			                  <input type="text" class="form-control" name="testName" ng-model="postrequirement.name" placeholder=" sponsorName" required> 
+			                    <span class="help-block" ng-show="frm.sponsorName.$dirty && frm.sponsorName.$error.required">Required.!</span>
+			                    <span class="help-block" ng-show="frm.sponsorName.$error.pattern && frm.sponsorName.$invalid ">please enter sponsorName</span>  
+			                </div>  
+			                  <div class="form-group">
+			                  <label class="control-label">Phone Number:</label>
+			                  <input type="text" class="form-control" name="description" ng-model="postrequirement.phone" placeholder="Phone Number" required> 
+			                    <span class="help-block" ng-show="frm.Max_SponsorShips.$dirty && frm.Max_SponsorShips.$error.required">Required.!</span>
+			                    <span class="help-block" ng-show="frm.Max_SponsorShips.$error.pattern && frm.Max_SponsorShips.$invalid ">please enter Phone Number</span>  
+			                </div> 
+			                  <div class="form-group">
+			                  <label class="control-label">Email:</label>
+			                  <input type="text" class="form-control" name="testCode" ng-model="postrequirement.email" placeholder="Email" required> 
+			                    <span class="help-block" ng-show="frm.Max_Budget.$dirty && frm.Max_Budget.$error.required">Required.!</span>
+			                    <span class="help-block" ng-show="frm.Max_Budget.$error.pattern && frm.Max_Budget.$invalid ">please enter Max_Budget</span>  
+			                </div> 
+			                  <div class="form-group">
+			                  <label class="control-label">Budget:</label>
+			                  <input type="text" class="form-control" name="testPrice" ng-model="postrequirement.maxBudget" placeholder="Enter Your maxBudget" required> 
+			                    <span class="help-block" ng-show="frm.Threshold.$dirty && frm.Threshold.$error.required">Required.!</span>
+			                    <span class="help-block" ng-show="frm.Threshold.$error.pattern && frm.Threshold.$invalid ">please enter Threshold</span>  
+			                </div>             
+			                    <div class="form-group">
+			                      <button type="submit" class="btn btn-primary pull-right" ng-disabled="frm.$invalid">Submit</button>
+			                    </div>     
+			  	 </form>
+			   </div>
+			 </div>
+			</div>
+      	</div>
+    </div>
+
+<!-- <center><h3>Create Sponsor</h3></center> -->
+
+

@@ -1,0 +1,136 @@
+<direct></direct>
+<div class="container main">
+		<div class="row">
+			<div class="col-md-6">
+				<img ng-src="data:image/jpeg;base64,{{picture.picData}}" class="img-thumbnail img-responsive profilepic">
+			</div>
+			<div class="col-md-4 basic">
+				<input type="button" name="Edit" value="Edit" ui-sref="userProfile({getid: getid1})" class="btn btn-primary pull-right btnmargin">
+				<div class="row">
+					<div class="form-group">
+						<h3>{{userD.firstName}} {{userD.lastName}}</h3>
+					</div>
+					<div class="form-group">
+						<h5><span class="glyphicon glyphicon-envelope"></span> {{userD.name}}</h5>
+					</div>
+					<div class="form-group">
+						<h5><span class="glyphicon glyphicon-phone"></span> {{userD.mobileNum}}</h5>
+					</div>
+					<div class="row">
+						<div class="col-md-5">
+							<h5><span class="glyphicon glyphicon-calendar"></span> {{userD.dob | date : "dd-MM-y"}}</h5>
+						</div>
+						<div class="col-md-4">
+							<h5><span class="glyphicon glyphicon-user"></span> {{userD.gender}}</h5>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-5 boxpanel">
+				<div class="tab" role="tabpanel">
+                <!-- Nav tabs -->
+                <ul class="nav nav-tabs" role="tablist">
+                    <li role="presentation" class="active"><a href="#javatab" aria-controls="home" role="tab" data-toggle="tab">Address</a></li>
+                </ul>
+               <div class="row">
+						<div class="col-md-5">
+							<h5><span class="fa fa-home"></span> <b>Door No:</b> {{userD.doorNo}}</h5>
+						</div>
+						<div class="col-md-7">
+							<h5><span class="fa fa-road"></span><b> Street:</b> {{userD.street}}</h5>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-5">
+							<h5><span class="fa fa-building"></span> <b>District:</b> {{userD.district}}</h5>
+						</div>
+						<div class="col-md-7">
+							<h5><span class="fa fa-sitemap"></span><b> State:</b>{{userD.state}}</h5>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-5">
+							<h5><span class="fa fa-map-pin"></span> <b>City:</b> {{userD.city}}</h5>
+						</div>
+						<div class="col-md-7">
+							<h5><span class="fa fa-map-marker"></span> <b>PinCode:</b> {{userD.zipCode}}</h5>
+						</div>
+					</div>
+          
+            </div>
+			</div>
+			<div class="col-md-5 col-md-offset-2 boxpanel">
+				<div class="tab" role="tabpanel">
+                <!-- Nav tabs -->
+                <ul class="nav nav-tabs" role="tablist">
+                    <li role="presentation" class="active"><a href="#javatab" aria-controls="home" role="tab" data-toggle="tab">Bank Details</a></li>
+                </ul>
+                <div class="row">
+						<div class="col-md-5">
+						<h5><span class="fa fa-university"></span>  <b>Bank Name:</b>{{userD.bankName}}</h5>
+							
+						</div>
+						<div class="col-md-7">
+						<h5><span class="fa fa-address-card"></span> <b>Account Number:</b>{{userD.accountNo}}</h5>
+							
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-5">
+							<h5><span class="fa fa-universal-access"></span> <b>IFSC Code:</b> {{userD.ifscCode}}</h5>
+						</div>
+						<div class="col-md-7">
+						<h5><span class="fa fa-address-book-o"></span> <b> Account Type: </b>{{userD.accountType}}</h5>
+							
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-12">
+							<h5><span class="glyphicon glyphicon-user"></span> <b> Branch:</b> {{userD.branchName}}</h5>
+						</div>
+						
+					</div>
+          
+            </div>
+
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-5 boxpanel">
+				<div class="tab" role="tabpanel">
+                <!-- Nav tabs -->
+                <ul class="nav nav-tabs" role="tablist">
+                    <li role="presentation" class="active"><a href="#javatab" aria-controls="home" role="tab" data-toggle="tab"> Aadhar Details</a></li>
+                </ul>
+                <div class="col-md-12">
+					<h5><span class="fa fa-sort-numeric-desc"></span><b> Aadhar Number:</b>{{userD.aadharNo}}</h5>
+				</div>
+				<div class="col-md-12">
+					<h5><span class="fa fa-picture-o"></span><b> Pic Name:
+						<img ng-src="data:image/jpeg;base64,{{userD.aadhaarImg}}" width="100px" height="50px" class="img-thumbnail img-responsive profilepic1">
+						</b>
+					</h5>
+
+				</div>
+                </div>
+			</div>
+			<div class="col-md-5 col-md-offset-2 boxpanel">
+				<div class="tab" role="tabpanel">
+                <!-- Nav tabs -->
+                <ul class="nav nav-tabs" role="tablist">
+                    <li role="presentation" class="active"><a href="#javatab" aria-controls="home" role="tab" data-toggle="tab">Vehicle Details</a></li>
+                </ul>
+                <div class="row">
+						<div class="col-md-12">
+							<h5><span class="fa fa-taxi"></span><b> Vehicle Type: </b> {{userD.vehicleType}}</h5>
+						</div>
+						<div class="col-md-12">
+							<h5><span class="fa fa-sort-amount-asc"></span><b> Vehicle Number:</b>{{userD.vehicleNo}}</h5>
+						</div>
+					</div>
+                </div>
+			</div>
+		</div>
+	</div>

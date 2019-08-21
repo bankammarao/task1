@@ -1,0 +1,35 @@
+<direct></direct>
+<div class="container">
+<div class="col-md-8 col-md-offset-2">
+<div class="row">
+					<div class="col-md-6 boxx3 clrr3">
+					<div class="password-form">
+						<h4 style="height:15px;">{{Pmessage}}</h4>
+					    <form class="">
+					    	
+					    	<p class="size">Change Password Instructions </p>
+					    	<div class="form-group col-md-10 col-md-offset-1">
+					    		<input type="{{inputType}}" class="form-control" ng-model="oldPwd" placeholder="Enter Old Password">
+					    	</div>
+					    	<div class="form-group col-md-10 col-md-offset-1">
+					    		<input type="{{inputType}}" class="form-control" ng-model="newPwd" placeholder="Enter New Password">
+					    	</div>
+					    	<div class="form-group col-md-10 col-md-offset-1">
+					    		<input type="password" class="form-control" placeholder="Retype New Password">
+					    	</div>
+					    	<div class="form-group col-md-10 col-md-offset-1">
+					    	<input type="checkbox" id="checkbox" ng-model="passwordCheckbox" ng-click="hideShowPassword()" />
+  									<label for="checkbox" ng-if="passwordCheckbox">Hide password</label>
+  									<label for="checkbox" ng-if="!passwordCheckbox">Show password</label>
+  								</div>
+					    </form>
+					       <div class="form-group">
+							<div class="row">
+								<div class="col-xs-8 col-xs-offset-2">
+									<input type="submit"  class="form-control btn btn-default" value="Change Password" ng-click="changepass()">
+								</div>
+							</div>
+					</div>
+	</div>
+</div>
+</div>

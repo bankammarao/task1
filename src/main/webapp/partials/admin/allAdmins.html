@@ -1,0 +1,39 @@
+<div class="wrapper">
+<directive></directive>
+
+<div class="content" id="content">
+<toggle></toggle>
+	<div class="container">
+	<div class="pull-right">
+			<button class="btn btn-primary pull-right" ui-sref="addadmin">Add Admin</button>
+		</div>
+		<div class="row">
+			<table class="table table-responsive-md table-striped">
+				<thead>
+				<th>ID</th>
+					<th>First Name</th>
+					<th>Last Name</th>
+					<th>Email</th>
+					<th>Mobile Number</th>
+				</thead>
+				<tbody>
+				<tr ng-repeat="admincc in admindata">
+				<td>{{adminacc.id}}</td>
+					<td>{{adminacc.firstName}}</td>
+					<td>{{adminacc.lastName}}</td>
+					<td>{{adminacc.name}}</td>
+					<td>{{adminacc.mobileNum}}</td>
+				</tr>
+				</tbody>
+			</table>
+		</div>
+		<div class="pull-left">
+			<button class="btn btn-primary pull-right" ui-sref="adminDashboard">Back</button>
+		</div>
+		<!-- <div class="pull-right">
+			<pagination total-items="totalCount" ng-change="pageChanged()" items-per-page="pageSizeSelected" direction-links="true"
+					ng-model="pageIndex" max-size="maxSize" class="pagination" boundary-links="true" rotate="false" num-pages="numPages"></pagination>
+		</div> -->
+	</div>
+</div>
+</div>

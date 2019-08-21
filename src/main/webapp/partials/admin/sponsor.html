@@ -1,0 +1,45 @@
+<admindirective></admindirective><br><br>
+<div class="container">
+<h3>List Of Sponsors</h3>
+</div>
+
+<div class="limiter">
+            <div class="container-table100">
+                <div class="wrap-table100">
+                    <div class="table100 ver1 m-b-110">
+                        <div class="table100-head">
+                            <table>
+                                <thead>
+                                    <tr class="row100 head">
+                                        <th class="cell100 column1"> ID </th>
+                                        <th class="cell100 column2"> CompanyName </th>
+                                        <th class="cell100 column3"> Name </th>
+                                        <th class="cell100 column4"> MaxSponsorShips </th>
+                                        <th class="cell100 column5"> maxBudget </th>
+                                        <th class="cell100 column5"> </th>
+                                        <th class="cell100 column5"> </th>
+                                    </tr>
+                                </thead>
+                            </table>
+                        </div>
+    
+                        <div class="table100-body js-pscroll">
+                            <table>
+                                <tbody>
+                                    <tr class="row100 body" ng-repeat="list in AllSponsorsList">
+                                        <td class="cell100 column1">{{list.id}}</td>
+                                        <td class="cell100 column2">{{list.contactId.companyName}}</td>
+                                        <td class="cell100 column3">{{list.contactId.firstName}}</td>
+                                        <td class="cell100 column4">{{list.maxSponsorShips}}</td>
+                                        <td class="cell100 column5">{{list.maxBudget}}</td>        
+                                        <td class="cell100 column5"><button type="submit" class="btn btn-primary" ng-click="getByIdSponsor(list.id)"><i class="fa fa-pencil" aria-hidden="true"></i></button></td>                                    
+                                        <td class="cell100 column5"><button class="btn btn-danger"  ng-click="deleteSponsor(list.id)">Delete</button></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                    </div>
+               		
+                    
+                </div>
+                </div>
+        </div> 

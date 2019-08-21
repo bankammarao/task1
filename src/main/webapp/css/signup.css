@@ -1,0 +1,202 @@
+.boxx1{
+	width: 400px;
+	height: 600px;
+	padding:25px;
+
+}
+.boxx2{
+	width: 400px;
+	height: 550px;
+}
+.clrr1{
+	background-color: #3B5998;
+	margin-left: 10px;
+	margin-top:20px;
+	margin-bottom:10px;	
+	color:white;
+	padding:20px;
+	box-shadow:1px 0px 3px 3px rgba(0, 0, 0, 0.3);
+}
+.clrr2{
+	
+	position: absolute;
+	background-color: #fff;
+	top: 45px;
+	left: 390px;
+	box-shadow:1px 0px 3px 3px rgba(0, 0, 0, 0.3);
+}
+
+.sign-form {
+		width: 300px;
+    	margin: 50px auto;
+	}
+.padd1{
+			padding: 20px;
+			margin-top: 35px;
+
+	}
+.tll{
+			margin-top: 100px;
+	}
+.errht{
+	height:45px;
+}
+.bootstrapWizard a:hover,.bootstrapWizard a:active,.bootstrapWizard a:focus {
+    text-decoration: none
+}
+
+.bootstrapWizard li {
+    display: block;
+    float: left;
+    width: 25%;
+    text-align: center;
+    padding-left: 0
+}
+
+.bootstrapWizard li:before {
+    border-top: 3px solid #55606E;
+    content: "";
+    display: block;
+    font-size: 0;
+    overflow: hidden;
+    position: relative;
+    top: 11px;
+    right: 1px;
+    width: 100%;
+    z-index: 1
+}
+
+.bootstrapWizard li:first-child:before {
+    left: 50%;
+    max-width: 50%
+}
+
+.bootstrapWizard li:last-child:before {
+    max-width: 50%;
+    width: 50%
+}
+
+.bootstrapWizard li.complete .step {
+    background: #0aa66e;
+    padding: 1px 6px;
+    border: 3px solid #55606E
+}
+
+.bootstrapWizard li .step i {
+    font-size: 10px;
+    font-weight: 400;
+    position: relative;
+    top: -1.5px
+}
+
+.bootstrapWizard li .step {
+    background: #B2B5B9;
+    color: #fff;
+    display: inline;
+    font-size: 22px;
+    line-height: 12px;
+    padding: 10px 15px;
+    border: 3px solid transparent;
+    border-radius: 50%;
+    line-height: normal;
+    position: relative;
+    text-align: center;
+    z-index: 2;
+    transition: all .1s linear 0s
+}
+
+.bootstrapWizard li.active .step,.bootstrapWizard li.active.complete .step {
+    background: #0091d9;
+    color: #fff;
+    padding: 10px 15px;
+    font-size: 22px;
+    border-radius: 50%;
+    border: 3px solid #55606E
+}
+
+.bootstrapWizard li.complete .title,.bootstrapWizard li.active .title {
+    color: #2B3D53
+}
+
+.bootstrapWizard li .title {
+    color: #bfbfbf;
+    display: block;
+    font-size: 13px;
+    line-height: 15px;
+    max-width: 100%;
+    position: relative;
+    table-layout: fixed;
+    text-align: center;
+    top: 20px;
+    word-wrap: break-word;
+    z-index: 104
+}
+
+.l
+{
+	margin-left:70px;
+}
+.b
+{
+	margin-bottom:50px;
+}
+.c{
+	margin-bottom:40px;
+}
+.d{
+	margin-bottom:10px;
+}
+.animate-switch{
+	padding:20px;
+}
+.form-wizard{
+margin-left:5px;
+}
+/* .aadhar{
+
+	width: 160px;
+    height: 90px;
+   border-radius: 3px;
+} */
+
+.field1 {
+  position: relative; 
+  padding-top: 10px;
+  padding-bottom:10px; 
+   
+}
+
+.field {
+  position: relative; 
+  padding-top: 10px; 
+   
+}
+.abc {
+  font-size: 14px;
+  width: 150px !important;
+  height: 25px;
+}
+.inputText {
+  font-size: 14px;
+  width: 330px;
+  height: 25px;
+}
+.floating-label {
+  position: absolute;
+  pointer-events: none;
+  left: 15px;
+  top: 18px;
+  transition: 0.2s ease all;
+}
+.left{
+	padding-left:15px;
+}
+.inputText:focus ~ .floating-label,
+.inputText:not(:focus):valid ~ .floating-label {
+  top: -6px;
+  left: -2px;
+  font-weight: bold;
+}
+.cursor{
+	cursor: pointer;
+}

@@ -1,0 +1,36 @@
+<div class="wrapper">
+<directive></directive>
+<div class="content" id="content">
+<toggle></toggle>
+<div class="container">
+<div class="col-md-8 col-md-offset-2 tlll12">
+<div class="row">
+					<div class="col-md-6 boxx12 clrr12">
+					<div class="adminadd-form">
+					    <form class="form-group">
+					    	<h3 class="text-center">Add Sub Admins</h3>
+					    	<input type="text" class="form-control het12" placeholder="Enter Firstname" ng-model="firstName">
+					    	<input type="text" class="form-control het12" placeholder="Enter Lastname" ng-model="lastName">
+					    	<input type="email" class="form-control het12" placeholder="Enter Username" ng-model="name">
+					    	<input type="text" class="form-control het12" placeholder="Enter Mobile Number" ng-model="mobileNum"> 
+					    	<input type="password" class="form-control het12" placeholder="Enter Password" ng-model="password">
+					    	<input type="date" class="form-control het12" placeholder="Enter Dob" ng-model="dob">
+										<label>Gender:</label><br>
+							<input type="radio" name="gender" ng-model="gender" value="female" ng-required="!userR.gender"/>Female 
+							<input type="radio" name="gender" ng-model="gender" value="male" ng-required="!userR.gender"/>Male
+							<div>
+					    	<button class="btn btn-primary pull-right htt12" ng-click="addadmins()">Add</button>
+							<button class="btn btn-primary pull-left" ui-sref="allAdmins">Back</button>
+							</div>
+					    </form>
+					   
+</div>
+</div>
+</div>
+		<!-- <div class="pull-right">
+			<pagination total-items="totalCount" ng-change="pageChanged()" items-per-page="pageSizeSelected" direction-links="true"
+					ng-model="pageIndex" max-size="maxSize" class="pagination" boundary-links="true" rotate="false" num-pages="numPages"></pagination>
+		</div> -->
+	</div>
+</div>
+</div>

@@ -1,0 +1,286 @@
+.loader {
+	font-size: 36px;
+	line-height: 36px;
+	font-weight: bold;
+	width: 200px;
+	height: 92px;
+	text-align: center;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: auto;
+}
+
+
+
+
+/* User Registraion Css */
+
+.Tcolor{
+	color:black;
+}
+
+/* change password Css */
+.boxx3{
+	width: 400px;
+	height: 400px;
+}
+
+.clrr3{
+	
+	position: absolute;
+	background-color: #fff;
+	top: 30px;
+	left: 170px;
+	box-shadow:1px 0px 3px 3px rgba(0, 0, 0, 0.3);
+}
+
+.password-form {
+		width: 300px;
+    	margin: 50px auto;
+	}
+.padd2{
+			padding: 35px;
+	}
+.tll{
+			margin-top: 100px;
+	}
+
+.mr{
+	margin-top: 0px;
+}
+.size{
+	font-size: 20px;
+}
+/* ended */
+/* vechiletype css */
+.boxxx4{
+	width: 450px;
+	height: 210px;
+}
+.clrrr4{
+	
+	position: absolute;
+	background-color: #fff;
+	top: 45px;
+	left: 170px;
+	box-shadow:1px 0px 3px 3px rgba(0, 0, 0, 0.3);
+}
+
+.master-form {
+		width: 300px;
+    	margin: 50px auto;
+	}
+.tlll{
+			margin-top: 100px;
+	}
+.htt{
+		margin-top: 35px;
+}
+/* ended */
+/* offeceCss */
+.boxx7{
+	width: 450px;
+	height: 370px;
+}
+.clrr7{
+	
+	position: absolute;
+	background-color: #fff;
+	top: 45px;
+	left: 170px;
+	box-shadow:1px 0px 3px 3px rgba(0, 0, 0, 0.3);
+}
+
+.master-form {
+		width: 300px;
+    	margin: 50px auto;
+	}
+.tlll7{
+			margin-top: 100px;
+	}
+.htt7{
+		margin-top: 35px;
+}
+.het7{
+	margin-top: 20px;
+}
+/* ended */
+
+
+
+
+
+body {
+    margin-top:8px;
+}
+.row>img {
+    width:50%;
+    background-size:cover;
+}
+.thumbnail {
+    max-width:100px;
+    display:inline;
+}
+a {
+    text-decoration:none;
+}
+.
+
+
+
+
+
+
+/* css for reset 2nd screen */
+.boxx1{
+	width: 400px;
+	height: 600px;
+	padding:25px;
+
+}
+.boxx23{
+	width: 400px;
+	height: 550px;
+}
+.clrr1{
+	background-color: #3B5998;
+	margin-left: 10px;
+	margin-top:20px;
+	margin-bottom:10px;	
+	color:white;
+	padding:20px;
+	box-shadow:1px 0px 3px 3px rgba(0, 0, 0, 0.3);
+}
+.cllrr2{
+	
+	position: absolute;
+	background-color: #fff;
+	top: 45px;
+	left: 390px;
+	box-shadow:1px 0px 3px 3px rgba(0, 0, 0, 0.3);
+}
+
+.r-form {
+		width: 300px;
+    	margin: 50px auto;
+	}
+.padd1{
+			padding: 35px;
+	}
+.tlll{
+			margin-top: 100px;
+	}
+
+.mrr{
+	margin-top: 150px;
+}
+/* ended here */
+
+/* css for reward points page */
+.boxx8{
+	width: 450px;
+	height: 320px;
+}
+.clrr8{
+	
+	position: absolute;
+	background-color: #fff;
+	top: 45px;
+	left: 170px;
+	box-shadow:1px 0px 3px 3px rgba(0, 0, 0, 0.3);
+}
+
+.reward-form {
+		width: 300px;
+    	margin: 50px auto;
+	}
+.tlll8{
+			margin-top: 100px;
+	}
+.htt8{
+		margin-top: 35px;
+}
+.het8{
+	margin-top: 20px;
+}
+
+//reportdetails
+.usertable tr td,th{
+    border-top:0px !important;
+}
+
+.reporttable tr td,th{
+	border-top:0px !important;
+}
+.reporttable{
+	box-shadow:2px 2px 8px black !important;
+	margin-top:2%;
+}
+.butedit{
+    margin-left: 65px;
+	
+}
+.btnsedit{
+	margin-top:550px;
+}
+.comment{
+	margin-top:10px;
+}
+//reports
+.report{
+	width: 550px;
+	height: 550px;
+}
+.repbox{
+	position: absolute;
+	background-color:#e8e5e5;
+	top: 180px;
+	left: 300px;
+	box-shadow:1px 0px 3px 3px rgba(0, 0, 0, 0.3);
+}
+.repo{
+	padding-top:30px;
+	padding-left:20px
+}
+.repcontent{
+	left:130px;
+}
+.postissue{
+	color:black;
+}
+.repimg{
+	left:160px;
+}
+/* ended here */
+
+/* admin add page css */
+.boxx12{
+	width: 450px;
+	height: 540px;
+}
+.clrr12{
+	
+	position: absolute;
+	background-color: #fff;
+	top: 10px;
+	left: 170px;
+	box-shadow:1px 0px 3px 3px rgba(0, 0, 0, 0.3);
+}
+
+.adminadd-form {
+		width: 300px;
+    	margin: 50px auto;
+	}
+.tlll12{
+			margin-top: 100px;
+	}
+.htt12{
+		margin-top: 35px;
+}
+.het12{
+	margin-top: 20px;
+}
+/* ends here */

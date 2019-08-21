@@ -1,0 +1,22 @@
+<direct></direct>
+	<div class="container">
+		<div class="row">
+			<table class="table">
+				<thead class=" text-primary">
+					<th>Report ID</th>
+					<th>Posted Date</th>
+					<th>Posted Time</th>
+				</thead>
+				<tbody ng-repeat="u in challan">
+				<tr>
+					<td>{{u.postedDate | date : "dd-MM-y"}}</td>
+					<td>{{u.postedTime}}</td>
+					<td>{{u.issueDate | date : "dd-MM-y"}}</td>
+					<td>{{u.issueTime}}</td>
+					<td>{{u.vehicleNum}}</td>
+					<td>{{u.vehicleType}}</td>
+				</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>

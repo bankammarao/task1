@@ -1,0 +1,27 @@
+<div class="wrapper">
+<directive></directive>
+<div class="container" id="content">
+<toggle></toggle>
+<div class="col-md-8 col-md-offset-2 tlll8">
+<div class="row">
+					<div class="col-md-6 boxx8 clrr8">
+					<div class="reward-form">
+					    <form class="form-group">
+					    	<h3 class="text-center">Reward Points</h3>
+					    	<select class="form-control htt8 het8" ng-model="x.selected" ng-change="oidfuntion(x.selected.id)" ng-options="x.vehicleType for x in details track by x.id">
+					    	</select>
+					    	
+					    	<select class="form-control htt8 het8" ng-model="y.selected"  ng-options="y.offenceCategory for y in res track by y.id">
+					    	</select>
+
+					    	<input type="text" class="form-control het8" placeholder="Enter Reward Points For Offence" ng-model="points">
+					    	<button class="btn btn-primary pull-right htt8" ng-click="rewardadd()">Add Points</button>
+					    </form>
+					   
+</div>
+
+</div>
+</div>
+</div>
+</div>
+</div>

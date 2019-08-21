@@ -1,0 +1,90 @@
+<div class="wrapper">
+	<directive></directive>
+	<div class="content cont" id="content">
+		<!-- 		<toggle></toggle> -->
+		<div class="row bg-white">
+
+			<div class="content">
+				<div class="col-md-offset-3 col-md-6 reporttable">
+
+					<div class="pull-right">
+						<button class="btn btn-primary" ng-click="showDiv=true;">Edit</button>
+						<button class="btn btn-default btn-xs" ui-sref='adminDashboard'>X</button>
+					</div>
+					<h3 class="text-center pdng">Issue Details</h3>
+					<div class="col-md-offset-3 col-md-9">
+						<table class="table">
+							<tr>
+								<th>Report Id:</th>
+								<td>{{reportDetails.id}}</td>
+							</tr>
+							<tr>
+								<th>Posted Date:</th>
+								<td>{{reportDetails.postedDate}}</td>
+							</tr>
+							<tr>
+								<th>Issue Date:</th>
+								<td>{{reportDetails.issueDate}}</td>
+							</tr>
+							<tr>
+								<th>Issue Time:</th>
+								<td>{{reportDetails.issueTime}}</td>
+							</tr>
+							<tr>
+								<th>Posted Time:</th>
+								<td>{{reportDetails.postedTime}}</td>
+							</tr>
+							<tr>
+								<th>Vechile Number:</th>
+								<td>{{reportDetails.vehicleNum}}</td>
+							</tr>
+							<tr>
+								<th>Vechile Type:</th>
+								<td>{{reportDetails.vehicleType}}</td>
+							</tr>
+							<tr>
+								<th>Offence Category:</th>
+								<td>{{reportDetails.offenceCategory}}</td>
+							</tr>
+							<th>Description:</th>
+							<td>{{reportDetails.description}}</td>
+							</tr>
+							<tr>
+								<th>Location:</th>
+								<td>{{reportDetails.location}}</td>
+							</tr>
+							<tr>
+							<tr>
+								<th>Status:</th>
+								<td>{{reportDetails.status}}</td>
+							</tr>
+							<tr>
+								<th>Comments:</th>
+								<td>{{reportDetails.comment}}</td>
+							</tr>
+							<tr>
+								<th>Attachment:</th>
+								<td>{{reportDetails.r}} <a
+									ui-sref="adminview({Rid:reportDetails.id})">Preview</a></td>
+							</tr>
+						</table>
+					</div>
+					<div ng-show="showDiv">
+						<button ng-model="show;" class="btn btn-primary btnmargin" ng-repeat="btn in btns" ng-click="disableClick(btn)" ng-disabled="btn.isDisabled">{{btn.name}}</button>
+						<div class="comment" id="target" ng-show="showtext">
+							<label>Comments:</label>
+							<textarea ng-model="comment" rows="4" cols="60"></textarea>
+							<button class="btn btn-primary pull-right" ng-click="commentsave(); showDiv=false">Save</button>
+						</div>
+					</div>
+
+
+					<div class="pull-left">
+						<button class="btn btn-primary" ui-sref="adminDashboard">Back</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+

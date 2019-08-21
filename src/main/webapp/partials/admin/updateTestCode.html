@@ -1,0 +1,41 @@
+<admindirective></admindirective>
+
+<h1 style="margin-top:50px;">this is createtest</h1><br>
+<div class="container m-t-50">
+  <div class="row">
+      <div class="col-md-offset-3 col-md-6">
+          <form name="frm" class="frmbgclr" ng-submit="createtest(postrequirement)">       
+               
+            
+                <div class="form-group">
+                  <label class="control-label">Test Name:</label>
+                  <input type="text" class="form-control" name="testName" ng-model="postrequirement.testName" placeholder="Enter Your Job Title" required> 
+                    <span class="help-block" ng-show="frm.testName.$dirty && frm.testName.$error.required">Required.!</span>
+                    <span class="help-block" ng-show="frm.testName.$error.pattern && frm.testName.$invalid ">please enter test name</span>  
+                </div>  
+                  <div class="form-group">
+                  <label class="control-label">Title for your job:</label>
+                  <input type="text" class="form-control" name="description" ng-model="postrequirement.description" placeholder="Enter Your description" required> 
+                    <span class="help-block" ng-show="frm.description.$dirty && frm.description.$error.required">Required.!</span>
+                    <span class="help-block" ng-show="frm.description.$error.pattern && frm.description.$invalid ">please enter description</span>  
+                </div> 
+                  <div class="form-group">
+                  <label class="control-label">Title for your job:</label>
+                  <input type="text" class="form-control" name="testCode" ng-model="postrequirement.testCode" placeholder="Enter Your testCode" required> 
+                    <span class="help-block" ng-show="frm.testCode.$dirty && frm.testCode.$error.required">Required.!</span>
+                    <span class="help-block" ng-show="frm.testCode.$error.pattern && frm.testCode.$invalid ">please enter title job</span>  
+                </div> 
+                  <div class="form-group">
+                  <label class="control-label">Title for your job:</label>
+                  <input type="text" class="form-control" name="testPrice" ng-model="postrequirement.testPrice" placeholder="Enter Your testPrice" required> 
+                    <span class="help-block" ng-show="frm.testPrice.$dirty && frm.testPrice.$error.required">Required.!</span>
+                    <span class="help-block" ng-show="frm.testPrice.$error.pattern && frm.testPrice.$invalid ">please enter testPrice</span>  
+                </div>             
+                    <div class="form-group">
+                      <button type="submit" class="btn btn-primary pull-right" ng-disabled="frm.$invalid">Submit</button>
+                    </div>     
+    </form>
+    </div>
+    </div>
+</div>
+

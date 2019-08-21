@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:tx="http://www.springframework.org/schema/tx" xmlns:security="http://www.springframework.org/schema/security"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
+			http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd
+			http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.3.xsd
+			http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security-4.2.xsd">
+
+	<!-- SPRING SETUP -->
+
+	<!-- Load properties so we can easily change them -->
+	<context:property-placeholder location="classpath:application.properties" />
+
+	<!-- Enable Annotation Configuration in order to automatically scan controllers -->
+	<context:annotation-config />
+
+
+	<!-- Allow @Transactional annotations for transaction management -->
+	<tx:annotation-driven transaction-manager="transactionManager" />
+
+	<!-- Search for Rest Resources and configure them automatically -->
+	<context:component-scan base-package="com.imtac.recruitment.*" />
+
+	<!-- DATABASE SETUP -->
+
+	<bean id="dataSource" class="org.apache.commons.dbcp2.BasicDataSource"
+		destroy-method="close">
+		<property name="username" value="${db.username}" />
+		<property name="password" value="${db.password}" />
+		<property name="driverClassName" value="${db.driver}" />
+		<property name="url" value="${db.url}" />
+	</bean>
+
+	<bean id="entityManagerFactory"
+		class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
+		<property name="dataSource" ref="dataSource" />
+		<property name="persistenceUnitName" value="examplePU" />
+		<property name="jpaVendorAdapter">
+			<bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter">
+				<property name="generateDdl" value="true" />
+				<property name="showSql" value="true" />
+			</bean>
+		</property>
+		<property name="jpaProperties">
+			<props>
+				<prop key="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</prop>
+			</props>
+		</property>
+	</bean>
+
+
+	<bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
+		<property name="host" value="${mail.host}" />
+		<property name="port" value="${mail.port}" />
+		<property name="username" value="${mail.username}" />
+		<property name="password" value="${mail.password}" />
+		<property name="javaMailProperties">
+			<props>
+				<prop key="mail.smtp.ssl.trust">${mail.host}</prop>
+				<prop key="mail.smtp.starttls.enable">${mail.starttls.enable}</prop>
+				<prop key="mail.smtp.auth">${mail.auth}</prop>
+			</props>
+		</property>
+	</bean>
+
+
+	<bean id="emailTemplate" class="org.springframework.mail.SimpleMailMessage">
+		<property name="from" value="${mail.username}" />
+		<property name="subject" value="${mail.subject}" />
+		<property name="text">
+			<value>
+		<![CDATA[
+                    Hi %s,
+
+                    Thank You for registering for HIV test kit. You can track the kit with your unique Order Code Id.
+
+                    Regards,
+                    %s.
+		]]>
+			</value>
+		</property>
+	</bean>
+
+
+	<bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
+		<property name="entityManagerFactory" ref="entityManagerFactory" />
+	</bean>
+
+	<bean id="userDao" class="com.imtac.recruitment.dao.JpaUserDao" />
+	<bean id="accessTokenDao" class="com.imtac.recruitment.dao.JpaAccessTokenDao" />
+
+	<bean id="userService" class="com.imtac.recruitment.serviceimpl.DaoUserService">
+		<constructor-arg ref="userDao" />
+		<constructor-arg ref="accessTokenDao" />
+	</bean>
+
+	<bean id="messageSource"
+		class="org.springframework.context.support.ResourceBundleMessageSource">
+		<property name="basename">
+			<value>messages</value>
+		</property>
+	</bean>
+
+	<bean id="dataBaseInitializer" class="com.imtac.recruitment.dao.DataBaseInitializer"
+		init-method="initDataBase">
+		<constructor-arg ref="userDao" />
+		<constructor-arg ref="passwordEncoder" />
+	</bean>
+
+	<!-- Services -->
+
+	<bean id="positionTypeService"
+		class="com.imtac.recruitment.serviceimpl.PositionTypeServiceImpl" />
+	<bean id="positionService" class="com.imtac.recruitment.serviceimpl.PositionServiceImpl" />
+	<bean id="employmentTypeService"
+		class="com.imtac.recruitment.serviceimpl.EmploymentTypeServiceImpl" />
+	<bean id="categoryService" class="com.imtac.recruitment.serviceimpl.CategoryServiceImpl" />
+	<bean id="designationService"
+		class="com.imtac.recruitment.serviceimpl.DesignationServiceImpl" />
+	<bean id="demographicInfoService"
+		class="com.imtac.recruitment.serviceimpl.DemographicInfoServiceImpl" />
+	<bean id="fileStorageService"
+		class="com.imtac.recruitment.serviceimpl.FileStorageServiceImpl" />
+	<bean id="feeService" class="com.imtac.recruitment.serviceimpl.FeeServiceImpl" />
+	<bean id="employmentInfoService" class="com.imtac.recruitment.serviceimpl.EmploymentInfoServiceImpl" />
+	<bean id="educationalQualificationInfoService" class="com.imtac.recruitment.serviceimpl.EducationalQualificationsServiceImpl" />
+
+
+
+	<!-- dao -->
+
+	<bean id="positionTypedao" class="com.imtac.recruitment.dao.JpaPositionTypeDao" />
+	<bean id="positionDao" class="com.imtac.recruitment.dao.JpaPositionDao" />
+	<bean id="employmentTypeDao" class="com.imtac.recruitment.dao.JpaEmploymentTypeDao" />
+	<bean id="categoryDao" class="com.imtac.recruitment.dao.JpaCategoryDao" />
+	<bean id="designationDao" class="com.imtac.recruitment.dao.JpaDesignationDao" />
+	<bean id="demographicInfoDao" class="com.imtac.recruitment.dao.JpaDemographicInfoDao" />
+	<bean id="fileUploadDao" class="com.imtac.recruitment.dao.JpaFileUpload" />
+	<bean id="feeDao" class="com.imtac.recruitment.dao.JpaFeeDao" />
+	<bean id="addressDao" class="com.imtac.recruitment.dao.JpaAddressDao" />
+	<bean id="referenceDao" class="com.imtac.recruitment.dao.JpaReferenceDao" />
+	<bean id="applicationNumberDao" class="com.imtac.recruitment.dao.JpaGenerateApplicationNumberDao" />
+	<bean id="educationalQualificationsInfoDao" class="com.imtac.recruitment.dao.JpaEducationalQualificationsDao" />
+	<bean id="employmentInfoDao" class="com.imtac.recruitment.dao.JpaEmploymentInfoDao" />
+	<bean id="experienceDao" class="com.imtac.recruitment.dao.JpaExperienceDao" />
+	<bean id="achievementDao" class="com.imtac.recruitment.dao.JpaAchievementDao" />
+	<bean id="certificatetDao" class="com.imtac.recruitment.dao.JpaCertificateDao" />
+
+
+
+	<!-- INIT REST COMPONENTS -->
+
+	<bean id="objectMapper" class="com.fasterxml.jackson.databind.ObjectMapper" />
+
+	<!-- SPRING SECURITY SETUP -->
+
+	<bean id="passwordEncoder"
+		class="org.springframework.security.crypto.password.StandardPasswordEncoder">
+		<constructor-arg value="${app.secret}" />
+	</bean>
+
+	<!-- Enabling User Authentication Setup -->
+
+	<security:authentication-manager id="authenticationManager">
+		<security:authentication-provider
+			user-service-ref="userService">
+
+			<security:password-encoder ref="passwordEncoder" />
+		</security:authentication-provider>
+	</security:authentication-manager>
+
+	<security:http entry-point-ref="unauthorizedEntryPoint"
+		authentication-manager-ref="authenticationManager" create-session="stateless">
+		<security:csrf disabled="true" />
+		<security:custom-filter ref="authenticationTokenProcessingFilter"
+			position="PRE_AUTH_FILTER" />
+		<security:intercept-url pattern="/rest/user/authenticate"
+			access="permitAll" />
+		<security:intercept-url method="GET"
+			pattern="/rest/blogposts/**" access="hasRole('USER')" />
+
+	</security:http>
+
+	<bean id="unauthorizedEntryPoint" class="com.imtac.recruitment.rest.UnauthorizedEntryPoint" />
+
+	<bean id="authenticationTokenProcessingFilter"
+		class="com.imtac.recruitment.rest.AuthenticationTokenProcessingFilter">
+		<constructor-arg ref="userService" />
+	</bean>
+
+	<!-- <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver"> 
+		max upload size in bytes <property name="maxUploadSize" value="20971520" 
+		/> max size of file in memory (in bytes) <property name="maxInMemorySize" 
+		value="1048576" /> 1MB </bean> -->
+
+</beans>

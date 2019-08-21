@@ -1,0 +1,33 @@
+
+<div class="container">
+	<button class="btn btn-success pull-right" ui-sref="Dashboard">Back</button>
+	<ul class="col-md-12 photos">
+		
+		<div class="col-md-3 imag">
+			<li><img ng-src="data:image/jpeg;base64,{{user.file1_data}}"
+				style="width: 280px; height: 280px;" class="img-responsive imgView"
+				ng-model="admin" /></li>
+			<li>{{user.file1}}</li>
+		</div>
+		<div class="col-md-3 imag">
+			<li><img ng-src="data:image/jpeg;base64,{{user.file2_data}}"
+				style="width: 280px; height: 280px;" class="img-responsive"
+				ng-model="admin" /></li>
+			<li>{{user.file2}}</li>
+		</div>
+		<div class="col-md-3 imag">
+			<li><img ng-src="data:image/jpeg;base64,{{user.file3_data}}"
+				style="width: 280px; height: 280px;" class="img-responsive"
+				ng-model="admin" /></li>
+			<li>{{user.file3}}</li>
+		</div>
+		<div class="col-md-3 imag">
+			<li><img ng-src="data:image/jpeg;base64,{{user.file4_data}}"
+				style="width: 280px; height: 280px;" class="img-responsive"
+				ng-model="admin" /></li>
+			<li>{{user.file4}}</li>
+		</div>
+
+	</ul>
+
+</div>

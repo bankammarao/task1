@@ -1,0 +1,108 @@
+<admindirective></admindirective><br><br>
+<div class="container">
+<h3>List Of TestCodes</h3>
+</div>
+
+<div class="limiter">
+            <div class="container-table100">
+                <div class="wrap-table100">
+                    <div class="table100 ver1 m-b-110">
+                        <div class="table100-head">
+                            <table>
+                                <thead>
+                                    <tr class="row100 head">
+                                        <th class="cell100 column1"> ID </th>
+                                        <th class="cell100 column2"> Description </th>
+                                        <th class="cell100 column3"> TestCode </th>
+                                        <th class="cell100 column4"> TestName </th>
+                                        <th class="cell100 column5"> TestPrice </th>
+                                        <th class="cell100 column5"> </th>
+                                        <th class="cell100 column5"> </th>
+                                    </tr>
+                                </thead>
+                            </table>
+                        </div>
+    
+                        <div class="table100-body js-pscroll">
+                            <table>
+                                <tbody>
+                                    <tr class="row100 body" ng-repeat="list in testDataList">
+                                        <td class="cell100 column1">{{list.id}}</td>
+                                        <td class="cell100 column2">{{list.description}}</td>
+                                        <td class="cell100 column3">{{list.testCode}}</td>
+                                        <td class="cell100 column4">{{list.testName}}</td>
+                                        <td class="cell100 column5">{{list.testPrice}}</td>        
+                                        <td class="cell100 column5"><button type="submit" class="btn btn-primary" ng-click="getByIdTestCode(list.id)" data-toggle="modal" data-target="#myModal"><i class="fa fa-pencil" aria-hidden="true"></i></button></td>                                        
+                                        
+                                                                               
+                                        <td class="cell100 column5"><button class="btn btn-danger"  ng-click="deletetestcode(list.id)">Delete</button></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                    </div>
+               		
+                    
+                </div>
+                </div>
+        </div> 
+        
+<div class="container">
+  
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title"></h4>
+        </div>
+        <div class="modal-body">
+         <div class="panel-group">
+		 
+		    <div class="panel panel-success">
+		      <div class="panel-heading">Update	 TestCode</div>
+				<div class="container m-t-50">
+					<div class="panel-body col-md-5">
+				
+		          <form name="frm" class="frmbgclr" ng-submit="createtest(postrequirement)">   
+		          <div ng-repeat="postrequirement in comment">		            
+		                <div class="form-group">
+		                  <label class="control-label">Test Name:</label>
+		                  <input type="text" class="form-control" name="testName" ng-model="postrequirement.testName"  placeholder="Enter Your Job Title" required> 
+		                    <span class="help-block" ng-show="frm.testName.$dirty && frm.testName.$error.required">Required.!</span>
+		                    <span class="help-block" ng-show="frm.testName.$error.pattern && frm.testName.$invalid ">please enter test name</span>  
+		                </div>  
+		                  <div class="form-group">
+		                  <label class="control-label">Title for your job:</label>
+		                  <input type="text" class="form-control"  style="width:70% !important" name="description" ng-model="postrequirement.description" placeholder="Enter Your description" required> 
+		                    <span class="help-block" ng-show="frm.description.$dirty && frm.description.$error.required">Required.!</span>
+		                    <span class="help-block" ng-show="frm.description.$error.pattern && frm.description.$invalid ">please enter description</span>  
+		                </div> 
+		                  <div class="form-group">
+		                  <label class="control-label">Title for your job:</label>
+		                  <input type="text" class="form-control" style="width:70% !important" name="testCode" ng-model="postrequirement.testCode" placeholder="Enter Your testCode" required> 
+		                    <span class="help-block" ng-show="frm.testCode.$dirty && frm.testCode.$error.required">Required.!</span>
+		                    <span class="help-block" ng-show="frm.testCode.$error.pattern && frm.testCode.$invalid ">please enter title job</span>  
+		                </div> 
+		                  <div class="form-group">
+		                  <label class="control-label">Title for your job:</label>
+		                  <input type="text" class="form-control" style="width:70% !important" name="testPrice" ng-model="postrequirement.testPrice" placeholder="Enter Your testPrice" required> 
+		                    <span class="help-block" ng-show="frm.testPrice.$dirty && frm.testPrice.$error.required">Required.!</span>
+		                    <span class="help-block" ng-show="frm.testPrice.$error.pattern && frm.testPrice.$invalid ">please enter testPrice</span>  
+		                </div>             
+		                    <div class="form-group">
+		                      <button type="submit" class="btn btn-primary pull-right" ng-disabled="frm.$invalid">Submit</button>
+		                    </div>     
+		    </form>
+		    </div>
+		    </div>
+		    </div>
+		</div>
+		</div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

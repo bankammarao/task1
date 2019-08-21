@@ -1,0 +1,49 @@
+ <!-- <direct></direct> -->
+<center>
+<div class="login-container">
+  <section class="login" id="login">
+    <header>
+      <center>
+        <img src="images/medintu.png" style="font-size: 30px; margin-top: 10%;" alt="logo">
+      </center>
+      <h4>Login</h4>
+    </header>
+    <div class="row">
+    	<div class="col-md-offset-2 col-md-8">
+	    	 <form class="login-form"  method="post">
+		      <input type="text"  class="form-control" placeholder="User"  ng-model="username" name="email" required autofocus/>
+		      <span ng-show="loginForm.email.$invalid && loginForm.email.$touched ||loginForm.email.$invalid && loginForm.email.$dirty" class="index_error">
+											<span ng-show="loginForm.email.$error.required">Email is required </span>
+										</span>
+										<span ng-show="loginForm.email.$error.pattern" class="index_error">Enter valid Email Id</span>
+		      <input type="password" class="login-input" placeholder="Password" ng-model="password" name="password" required/>
+		      <span ng-show="loginForm.password.$invalid && loginForm.password.$touched ||loginForm.password.$invalid && loginForm.password.$dirty" class="index_error">
+										    <span ng-show="loginForm.password.$error.required">Password is required </span>
+										</span>
+										 <span ng-show="loginForm.password.$error.pattern" class="index_error">Password length must be 8 chars</span>
+		      <div class="submit-container">
+		        <button type="submit" ng-click="login()" class="login-button">LOGIN</button>
+		      </div>
+		    </form>
+    	</div>
+    </div>
+   
+  </section>
+  <p>2016 - <a href="https://www.twitter.com/isacfadoni">Isac Fadoni</a></p>
+</div>
+<button id="e1">Login error!</button></center>
+
+<script>
+    var form = document.getElementById('login');
+var buttonE1 = document.getElementById('e1');
+
+buttonE1.addEventListener('click', function () {
+  form.classList.add('error_1');
+  setTimeout(function () {
+    form.classList.remove('error_1');
+  }, 3000);
+});
+</script>
+
+
+
